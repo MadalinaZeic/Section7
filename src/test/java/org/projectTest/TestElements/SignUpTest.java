@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.support.PageFactory;
+import webviews.LogIn;
 import webviews.Register;
 
 import java.util.Arrays;
@@ -52,7 +53,5 @@ public class SignUpTest extends TestBase {
         assertThat("The last name is not present.", driver.getPageSource(), containsString(lastName));
         assertThat("The email address is not present.", driver.getPageSource(), containsString(email));
     }
-
-
 }
 

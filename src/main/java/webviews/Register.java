@@ -25,18 +25,6 @@ public class Register {
     @FindBy(id = "is_subscribed")
     private WebElement newsLetterCheckBox;
 
-    public WebElement getFirstName() {
-        return firstName;
-    }
-
-    public WebElement getLastName() {
-        return lastName;
-    }
-
-    public WebElement getEmail() {
-        return email;
-    }
-
     public void inputFirstName(String keyword) {
         firstName.sendKeys(keyword);
     }

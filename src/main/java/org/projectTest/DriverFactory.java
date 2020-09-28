@@ -28,7 +28,7 @@ public class DriverFactory {
                 driver = new InternetExplorerDriver();
                 break;
         }
-        //mvn test -Dtest=SimpleSearchTest -Dbrowser=ie -> to run the test from the terminal
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
