@@ -8,8 +8,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 
 public class LogInTest extends TestBase {
-    private final String email = "AnaPop80@gmail123.com";
-    private final String password = "anapass01";
+    private final String email = "AnaPop467421@cocox.com";
+    private final String password = "anapass467";
 
     private final String invalidEmail = "AnaPop78@gmail123.com";
     private final String invalidPassword = "anapass00";
@@ -24,7 +24,7 @@ public class LogInTest extends TestBase {
         logIn.clickLogInButton();
 
         assertThat("The page displayed is incorrect.", driver.getCurrentUrl(), containsString("https://demo.cart2quote.com/customer/account/"));
-        assertThat("There is no confirmation message.", driver.getPageSource(), containsString("Hello, Ana Pop!"));
+        assertThat("There is no confirmation message.", driver.getPageSource(), containsString("Hello, Ana"));
         assertThat("The email address is incorrect.", driver.getPageSource(), containsString(email));
     }
 
@@ -39,6 +39,7 @@ public class LogInTest extends TestBase {
 
         assertThat("There is no confirmation message.", driver.getPageSource(), containsString("Invalid login or password."));
     }
+
     @Test
     public void logInFailedWithInvalidEmail(){
         openLogInPage();
@@ -50,6 +51,7 @@ public class LogInTest extends TestBase {
 
         assertThat("There is no confirmation message.", driver.getPageSource(), containsString("Invalid login or password."));
     }
+
     @Test
     public void logInFailedWithInvalidPassword(){
         openLogInPage();
@@ -61,6 +63,7 @@ public class LogInTest extends TestBase {
 
         assertThat("There is no confirmation message.", driver.getPageSource(), containsString("Invalid login or password."));
     }
+
     @Test
     public void logInFailedWithEmptyCredentials(){
         openLogInPage();

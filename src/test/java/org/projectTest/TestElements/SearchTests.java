@@ -50,8 +50,7 @@ public class SearchTests extends TestBase {
         Search search = PageFactory.initElements(driver, Search.class);
         search.searchSimilarProducts("");
 
-
-
+        assertThat("Test", search.getSearchField().getAttribute("class"), containsString("input-text required-entry validation-failed"));
     }
 }
 

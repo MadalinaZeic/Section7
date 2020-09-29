@@ -41,7 +41,7 @@ public class SignUpTest extends TestBase {
 
         register.inputFirstName(fillFormGenerator(firstName, 10));
         register.inputLastName(fillFormGenerator(lastName, 11));
-        register.inputEmail(fillEmailGenerator(email, 12));
+        register.inputEmail(fillEmailGenerator(email, 15));
         register.inputPassword(fillFormGenerator("anapass", 10));
         register.inputPasswordConfirmation(fillFormGenerator("anapass", 10));
         register.clickNewsLetterCheckBox();

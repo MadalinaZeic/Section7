@@ -1,13 +1,10 @@
 package webviews;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.projectTest.DriverFactory;
 
 public class Cart {
-//    @FindBy(css = ".add-to-cart-buttons .btn-cart")
+
     @FindBy(css = ".actions:nth-child(4) > .btn-cart-first > span > span")
     private WebElement addToCartButton;
 
@@ -15,7 +12,23 @@ public class Cart {
     @FindBy(css = ".cart-footer-actions .btn-empty")
     private WebElement removeButton;
 
-    @FindBy ()
+    @FindBy(css = ".product-cart-actions > .input-text")
+    private WebElement quantityField;
+
+    @FindBy(css = ".product-cart-actions > .button")
+    private WebElement updateQtyButton;
+
+
+
+    public void updateQty(int newQty){
+        quantityField.clear();
+        quantityField.sendKeys(String.valueOf(newQty));
+        updateQtyButton.click();
+    }
+
+    public WebElement getQuantityField() {
+        return quantityField;
+    }
 
     public WebElement getAddToCartButton() {
         return addToCartButton;
@@ -24,14 +37,6 @@ public class Cart {
     public WebElement getRemoveButton() {
         return removeButton;
     }
-
-
-    /*public WebElement getAddToCartButtonByProductName(WebDriver driver, String productName) {
-        return driver.findElement(
-                By.xpath("//div[@class='product-info' and ./descendant::*[text()" +
-                        "='" + productName + "']]//button[contains(@class, 'btn-cart')]"));
-    }*/
-
 
 }
 

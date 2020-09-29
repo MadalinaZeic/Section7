@@ -29,14 +29,27 @@ public class CartTests extends TestBase {
         Cart cartPage = PageFactory.initElements(driver, Cart.class);
         cartPage.getRemoveButton().click();
 
-        assertThat("Cart still contains products.", driver.getPageSource(),containsString("Shopping Cart is Empty"));
+        assertThat("Cart still contains products.", driver.getPageSource(), containsString("Shopping Cart is Empty"));
     }
 
     @Test
-    public void updateQuantityInCart(){
+    public void updateQuantityInCartWithUnavailableQty() {
         addProductToCart();
 
         Cart cartPage = PageFactory.initElements(driver, Cart.class);
+        cartPage.updateQty(3);
 
+        assertThat("The quantity was updated.", driver.getPageSource(), containsString("is not available."));
     }
+
+    @Test
+    public void updateQuantityInCart() {
+        addProductToCart();
+
+        Cart cartPage = PageFactory.initElements(driver, Cart.class);
+        cartPage.updateQty(1);
+
+        assertThat("The quantity was not updated.", driver.getPageSource(), containsString("Proceed to Checkout"));
+    }
+
 }

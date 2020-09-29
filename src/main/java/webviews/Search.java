@@ -1,17 +1,10 @@
 package webviews;
 
-import com.google.common.collect.Lists;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.json.JsonOutput;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 public class Search {
@@ -49,6 +42,10 @@ public class Search {
 
     public void searchSimilarProducts(String keyword) {
         searchField.sendKeys(keyword + Keys.ENTER);
+    }
+
+    public WebElement getSearchField() {
+        return searchField;
     }
 }
 
